@@ -1,8 +1,8 @@
 name: fab_menu
 description: A FloatingActionButton with expandable menus
 version: 0.0.1
-author:
-homepage:
+author: 薯片大神<94766524@qq.com>
+homepage: https://github.com/js94766524/fab_menu
 
 dependencies:
   flutter:
@@ -48,3 +48,7 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.io/custom-fonts/#from-packages
+
+environment:
+  sdk: ">=2.0.0-dev.28.0 <3.0.0"
+  flutter: ">=0.1.4 <2.0.0"

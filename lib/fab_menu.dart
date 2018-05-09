@@ -87,26 +87,27 @@ class _FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
   }
 
   _buildFabMask() {
-    if (!_controller.isDismissed)
-      return new AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return new GestureDetector(
-              onTap: () {
-                if (!_controller.isDismissed) {
-                  _controller.reverse();
-                }
-              },
-              behavior: HitTestBehavior.opaque,
-              child: new Opacity(
-                opacity: _controller.value * widget.maskOpacity,
-                child: new Container(
-                  color: widget.maskColor,
+      return new Offstage(
+        offstage: _controller.isDismissed,
+        child: new AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return new GestureDetector(
+                onTap: () {
+                  if (!_controller.isDismissed) {
+                    _controller.reverse();
+                  }
+                },
+                behavior: HitTestBehavior.opaque,
+                child: new Opacity(
+                  opacity: _controller.value * widget.maskOpacity,
+                  child: new Container(
+                    color: widget.maskColor,
+                  ),
                 ),
-              ),
-            );
-          });
-    return const SizedBox();
+              );
+            }),
+      );
   }
 
   _buildFabButton() {
