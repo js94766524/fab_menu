@@ -1,7 +1,9 @@
 # fab_menu
 
 A FloatingActionButton with expandable menus
-
+Do NOT use this lib directly!
+This is just a demo for my project, and copied many codes from others' libs.
+Read the source code, and design your project by yourself.
 ## Getting Started
 
 ```
