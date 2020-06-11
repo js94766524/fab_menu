@@ -41,6 +41,9 @@ class FabMenu extends StatefulWidget {
   ///Default to 0.5
   final double maskOpacity;
 
+  ///Default to 60.0
+  final double itemHeight;
+
   FabMenu({
     this.menus,
     this.mainIcon,
@@ -53,6 +56,7 @@ class FabMenu extends StatefulWidget {
     this.labelBackgroundColor,
     this.maskColor: Colors.white,
     this.maskOpacity: 0.5,
+    this.itemHeight: 60.0,
   }) : assert(menus != null);
 
   @override
@@ -118,7 +122,7 @@ class _FabMenuState extends State<FabMenu> with TickerProviderStateMixin {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: new List.generate(widget.menus.length, (int index) {
           Widget child = new Container(
-            height: 60.0,
+            height: widget.itemHeight ?? 60.0,
             alignment: FractionalOffset.topCenter,
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.end,
